@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8994650706428477453}
   - component: {fileID: 4784587876209191445}
   - component: {fileID: 285922387}
-  - component: {fileID: 4013604811783711612}
   - component: {fileID: 7006818886497933646}
   - component: {fileID: 4638394427630740885}
   m_Layer: 6
@@ -110,22 +109,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!70 &4013604811783711612
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 361859270099735512}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: 51ebe696a2aaada4fa67dbee966391b1, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.125, y: -0.375}
-  m_Size: {x: 0.625, y: 1.75}
-  m_Direction: 0
 --- !u!210 &7006818886497933646
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -161,8 +144,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.375, y: 1.5}
-  m_EdgeRadius: 0.125
+  m_Size: {x: 0.5, y: 1.625}
+  m_EdgeRadius: 0.0625
 --- !u!1 &2085766153485159222
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +193,6 @@ GameObject:
   - component: {fileID: 3214721365466926543}
   - component: {fileID: 6603846718325676257}
   - component: {fileID: 134739824356421465}
-  - component: {fileID: 5642547268293788411}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -249,8 +231,8 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0.5
   m_AngularDrag: 0.05
-  m_GravityScale: 3
-  m_Material: {fileID: 6200000, guid: 51ebe696a2aaada4fa67dbee966391b1, type: 2}
+  m_GravityScale: 5
+  m_Material: {fileID: 6200000, guid: a8f663a02910f194d88863a53f05d4ee, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 1
@@ -269,20 +251,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   solidsLayerMask:
     serializedVersion: 2
-    m_Bits: 128
-  capsule: {fileID: 4013604811783711612}
+    m_Bits: 1
   box: {fileID: 4638394427630740885}
   bodyAnimator: {fileID: 285922387}
   bodyRenderer: {fileID: 4784587876209191445}
   maxWalkSpeed: 10
   accelerateTime: 0.2
-  jumpHeight: 3.25
-  jumpPressedRememberDuration: 0.2
-  groundedRememberDuration: 0.2
+  jumpHeight: 4.25
+  jumpRememberDuration: 0.2
   maxCrouchSpeed: 4
   crouchHeight: 0.9
   ceilingCheck: {fileID: 5804040253721151812}
-  crushCheck: {fileID: 2248802424566103193}
 --- !u!82 &1999175030
 AudioSource:
   m_ObjectHideFlags: 0
@@ -734,26 +713,6 @@ MonoBehaviour:
     m_ActionName: Player/Crouch[/Keyboard/shift,/Keyboard/s,/XInputControllerWindows/leftTrigger]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: aaefe1d8-21e5-4aee-8ef7-bf156cb52a28
-    m_ActionName: Player/TongueAim[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: f817135c-95e9-45ba-898a-d6e3f1a29e82
-    m_ActionName: Player/TongueShoot[/Mouse/leftButton]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 71ec0013-73b5-4b3e-9fe6-a95e9c6889b7
-    m_ActionName: Player/TongueShootGamepad[/XInputControllerWindows/rightStick]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: fdcce477-f2dc-4d87-aef4-b43eee4c9148
-    m_ActionName: Player/TongueRetract[/Mouse/rightButton,/XInputControllerWindows/buttonEast]
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 0f6aa197-337e-4d36-88e5-00329ce4a97a
-    m_ActionName: Player/TongueExtend[/Mouse/leftButton,/XInputControllerWindows/buttonNorth]
-  - m_PersistentCalls:
-      m_Calls: []
     m_ActionId: 26b1b899-9331-44f9-b332-fead2f50c579
     m_ActionName: Player/Menu[/Keyboard/escape,/XInputControllerWindows/start]
   - m_PersistentCalls:
@@ -765,19 +724,6 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &5642547268293788411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3857400769282164724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1114a50db81cab4418188ecfa609c9eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyHints: {fileID: 11400000, guid: 840e8c146ad40a04e8cdd60049de3de3, type: 2}
 --- !u!1 &4590821030452229008
 GameObject:
   m_ObjectHideFlags: 0
